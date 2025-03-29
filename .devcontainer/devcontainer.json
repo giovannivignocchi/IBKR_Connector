@@ -1,0 +1,21 @@
+{
+    "name": "IBKR_API",  // Name of the development container.
+    "dockerFile": "../Dockerfile",            // Specifies the Dockerfile that will be used to build the container.
+    "context": "..",                       // The build context (in this case, it’s pointing to the parent folder, assuming that’s where your project files are).
+    "customizations": {
+      "vscode": {
+        "settings": {
+          // Your VSCode settings here, e.g.
+          "python.pythonPath": "/usr/local/bin/python3"
+        },
+        "extensions": [
+          "ms-python.python",           // Python support
+          "ms-toolsai.jupyter",         // Jupyter notebooks
+          "github.vscode-pull-request-github", // GitHub integration
+          "eamodio.gitlens",            // Advanced Git features
+          "ms-vscode-remote.remote-containers", // Remote Containers extension
+          "ms-azuretools.vscode-docker" // Docker extension
+        ]
+      }
+  }
+}
