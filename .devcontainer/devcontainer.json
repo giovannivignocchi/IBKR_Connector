@@ -1,11 +1,10 @@
 {
     "name": "IBKR_API",  // Name of the development container.
-    "dockerFile": "../Dockerfile",            // Specifies the Dockerfile that will be used to build the container.
-    "context": "..",                       // The build context (in this case, it’s pointing to the parent folder, assuming that’s where your project files are).
+    "dockerFile": "Dockerfile",            // Specifies the Dockerfile that will be used to build the container.
+    "context": "..",                       // The build context (it’s pointing to the parent folder).
     "customizations": {
       "vscode": {
         "settings": {
-          // Your VSCode settings here, e.g.
           "python.pythonPath": "/usr/local/bin/python3"
         },
         "extensions": [
@@ -17,5 +16,10 @@
           "ms-azuretools.vscode-docker" // Docker extension
         ]
       }
-  }
+  },
+  "mounts": [
+      "source=/home/giovanni-vignocchi/.ssh/id_rsa,target=/root/.ssh/id_rsa,type=bind,consistency=cached",
+      "source=/home/giovanni-vignocchi/.ssh/id_rsa.pub,target=/root/.ssh/id_rsa.pub,type=bind,consistency=cached",
+      "source=/home/giovanni-vignocchi/.ssh/known_hosts,target=/root/.ssh/known_hosts,type=bind,consistency=cached"
+  ]
 }
